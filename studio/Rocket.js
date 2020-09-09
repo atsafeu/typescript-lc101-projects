@@ -23,12 +23,12 @@ var Rocket = /** @class */ (function () {
         return false;
     };
     Rocket.prototype.canAdd = function (item) {
-        return (this.currentWeightKg() + item.massKg) <= this.totalCapacityKg;
+        return (this.currentMassKg() + item.massKg) <= this.totalCapacityKg;
     };
-    Rocket.prototype.currentWeightKg = function () {
-        return this.sumWeight(this.cargoItems) + this.sumWeight(this.astronauts);
+    Rocket.prototype.currentMassKg = function () {
+        return this.sumMass(this.cargoItems) + this.sumMass(this.astronauts);
     };
-    Rocket.prototype.sumWeight = function (items) {
+    Rocket.prototype.sumMass = function (items) {
         var total = 0;
         for (var i = 0; i < items.length; i++) {
             total += items[i].massKg;
